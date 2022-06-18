@@ -2,6 +2,13 @@
 
 package kill
 
+import (
+	"os"
+	"os/exec"
+	"syscall"
+	"unsafe"
+)
+
 // Kill kills a process, along with any child processes it may have spawned.
 func Kill(cmd *exec.Cmd) error {
 	if cmd.Process == nil {
