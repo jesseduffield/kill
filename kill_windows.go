@@ -1,6 +1,3 @@
-//go:build windows
-// +build windows
-
 // adapted from https://blog.csdn.net/fyxichen/article/details/51857864
 
 package kill
