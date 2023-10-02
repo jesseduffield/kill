@@ -22,6 +22,7 @@ func GetCreationTime(pid int) (time int64, err error) {
 	if err != nil {
 		return
 	}
+	defer closeHandle(HANDLE(handle))
 
 	var u syscall.Rusage
 	err = syscall.GetProcessTimes(syscall.Handle(handle), &u.CreationTime, &u.ExitTime, &u.KernelTime, &u.UserTime)
